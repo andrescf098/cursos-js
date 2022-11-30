@@ -12,5 +12,6 @@
     "node"
   ],
   "author": "Andrés Cifuentes <andrescf@outlook.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "type":"module"
 }
