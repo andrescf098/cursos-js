@@ -1,0 +1,25 @@
+{
+  "name": "npm-init",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "keywords": [
+    "JavaScript",
+    "node",
+    "npm"
+  ],
+  "author": "Andrés Cifuentes (andrescf@outlook.com)",
+  "license": "MIT",
+  "dependencies": {
+    "cowsay": "^1.5.0",
+    "json-server": "^0.17.1",
+    "moment": "^2.29.4",
+    "react": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.29.0"
+  }
+}

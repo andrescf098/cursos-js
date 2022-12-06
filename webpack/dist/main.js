@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log("hello"),console.log(((o,l)=>o+l))})();
