@@ -7,19 +7,36 @@ import AppContext from "../context/AppContext";
 import icon from "@icons/icon_menu.svg";
 import logo from "@logos/logo_yard_sale.svg";
 import shoppingCart from "@icons/icon_shopping_cart.svg";
+import MobileMenu from "./MobileMenu";
 
 const Header = () => {
   const [toggle, setToggle] = useState(false);
   const [toggleOrders, setToggleOrders] = useState(false);
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   const { state } = useContext(AppContext);
 
   const handleToggle = () => {
+    !setToggleOrders();
+    !setToggleMobileMenu();
     setToggle(!toggle);
   };
 
+  const handleToggleOrders = () => {
+    !setToggle();
+    !setToggleMobileMenu();
+    setToggleOrders(!toggleOrders);
+  }
+
+  const handleToggleMobileMenu = () => {
+    !setToggle();
+    !setToggleOrders();
+    setToggleMobileMenu(!toggleMobileMenu);
+  }
+
   return (
     <nav>
-      <img src={icon} alt="menu" className="menu" />
+      <img src={icon} alt="menu" className="menu" onClick={ handleToggleMobileMenu } />
+      {toggleMobileMenu && <MobileMenu />}
       <div className="navbar-left">
         <img src={logo} alt="logo" className="nav-logo" />
         <ul>
@@ -50,7 +67,7 @@ const Header = () => {
           </li>
           <li
             className="navbar-shopping-cart"
-            onClick={() => setToggleOrders(!toggleOrders)}
+            onClick={ handleToggleOrders }
           >
             <img src={shoppingCart} alt="shopping cart" />
             {state.cart.length > 0 ? <div>{state.cart.length}</div> : null}
